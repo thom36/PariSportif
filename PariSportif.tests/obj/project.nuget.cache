@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Oz+EXNVq/P4=",
+  "dgSpecHash": "LRgY8oKOAdk=",
   "success": true,
-  "projectFilePath": "/home/messina/Documents/Formation_C#/PariSportif.tests/PariSportif.tests.csproj",
+  "projectFilePath": "/home/messina/Documents/Formation_C#/PariSportifRepo/PariSportif.tests/PariSportif.tests.csproj",
   "expectedPackageFiles": [
     "/home/messina/.nuget/packages/azure.core/1.38.0/azure.core.1.38.0.nupkg.sha512",
     "/home/messina/.nuget/packages/azure.identity/1.11.4/azure.identity.1.11.4.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/messina/Documents/Formation_C#/PariSportif.tests/PariSportif.tests.csproj": {}
+    "/home/messina/Documents/Formation_C#/PariSportifRepo/PariSportif.tests/PariSportif.tests.csproj": {}
   },
   "projects": {
-    "/home/messina/Documents/Formation_C#/PariSportif.tests/PariSportif.tests.csproj": {
+    "/home/messina/Documents/Formation_C#/PariSportifRepo/PariSportif.tests/PariSportif.tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/messina/Documents/Formation_C#/PariSportif.tests/PariSportif.tests.csproj",
+        "projectUniqueName": "/home/messina/Documents/Formation_C#/PariSportifRepo/PariSportif.tests/PariSportif.tests.csproj",
         "projectName": "PariSportif.tests",
-        "projectPath": "/home/messina/Documents/Formation_C#/PariSportif.tests/PariSportif.tests.csproj",
+        "projectPath": "/home/messina/Documents/Formation_C#/PariSportifRepo/PariSportif.tests/PariSportif.tests.csproj",
         "packagesPath": "/home/messina/.nuget/packages/",
-        "outputPath": "/home/messina/Documents/Formation_C#/PariSportif.tests/obj/",
+        "outputPath": "/home/messina/Documents/Formation_C#/PariSportifRepo/PariSportif.tests/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/messina/.nuget/NuGet/NuGet.Config"
@@ -27,8 +27,8 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "/home/messina/Documents/Formation_C#/PariSportif/PariSportif.csproj": {
-                "projectPath": "/home/messina/Documents/Formation_C#/PariSportif/PariSportif.csproj"
+              "/home/messina/Documents/Formation_C#/PariSportifRepo/PariSportif/PariSportif.csproj": {
+                "projectPath": "/home/messina/Documents/Formation_C#/PariSportifRepo/PariSportif/PariSportif.csproj"
               }
             }
           }
@@ -370,14 +370,14 @@
         }
       }
     },
-    "/home/messina/Documents/Formation_C#/PariSportif/PariSportif.csproj": {
+    "/home/messina/Documents/Formation_C#/PariSportifRepo/PariSportif/PariSportif.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/messina/Documents/Formation_C#/PariSportif/PariSportif.csproj",
+        "projectUniqueName": "/home/messina/Documents/Formation_C#/PariSportifRepo/PariSportif/PariSportif.csproj",
         "projectName": "PariSportif",
-        "projectPath": "/home/messina/Documents/Formation_C#/PariSportif/PariSportif.csproj",
+        "projectPath": "/home/messina/Documents/Formation_C#/PariSportifRepo/PariSportif/PariSportif.csproj",
         "packagesPath": "/home/messina/.nuget/packages/",
-        "outputPath": "/home/messina/Documents/Formation_C#/PariSportif/obj/",
+        "outputPath": "/home/messina/Documents/Formation_C#/PariSportifRepo/PariSportif/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/messina/.nuget/NuGet/NuGet.Config"
