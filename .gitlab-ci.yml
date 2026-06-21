@@ -1,0 +1,24 @@
+stages:
+  - test
+
+dotnet-test:
+  stage: test
+  tags:
+    - docker
+  image: mcr.microsoft.com/dotnet/sdk:9.0
+  script:
+    - echo "Restore des dépendances"
+    - dotnet restore
+
+    - echo "Liste des fichiers"
+    - ls -R
+
+    - echo "Exécution des tests"
+    - cd PariSportif.tests
+    - dotnet test --logger "trx;LogFileName=test_results.trx"
+  artifacts:
+    when: always
+    paths:
+      - "**/TestResults/*.trx"
+    reports:
+      junit: "**/TestResults/*.trx"
