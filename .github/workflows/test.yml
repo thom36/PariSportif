@@ -2,7 +2,8 @@ name: .NET Tests
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
   pull_request:
 
 jobs:
@@ -10,18 +11,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v5
+      - name: Checkout repository
+        uses: actions/checkout@v5
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v5
         with:
-          dotnet-version: 9.0
+          dotnet-version: 9.0.x
+
+      - name: Debug repository structure
+        run: |
+          pwd
+          ls -la
+          find . -name "*.sln*" -o -name "*.csproj"
 
       - name: Restore
-        run: dotnet restore PariSportif/PariSportif.csproj
+        run: dotnet restore PariSportifRepo.slnx
 
       - name: Build
-        run: dotnet build PariSportif/PariSportif.csproj --no-restore
+        run: dotnet build PariSportifRepo.slnx --no-restore --configuration Release
 
       - name: Test
-        run: dotnet test PariSportif.tests/PariSportif.tests.csproj --no-build --logger "trx"
+        run: dotnet test PariSportifRepo.slnx --no-build --configuration Release --logger "trx"

@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="PariSportif.tests/PariSportif.tests.csproj" />
+  <Project Path="PariSportif/PariSportif.csproj" />
+</Solution>
