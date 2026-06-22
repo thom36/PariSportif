@@ -8,7 +8,7 @@ namespace PariSportif.Dto
 {
     public class OddDto
     {
-        public string OddDescription {get; set;} = string.Empty;
-        public double Value {get; set;}
+        public string OddDescription { get; set; } = string.Empty;
+        public double Value { get; set; }
     }
 }

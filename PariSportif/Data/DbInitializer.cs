@@ -10,7 +10,7 @@ namespace PariSportif.Data
     {
         public static void Seed(AppDbContext context)
         {
-            if(context.Matches.Any()) return;
+            if (context.Matches.Any()) return;
 
             var matches = new List<Match>
             {
@@ -41,6 +41,6 @@ namespace PariSportif.Data
             context.Matches.AddRange(matches);
             context.SaveChanges();
         }
-        
+
     }
 }

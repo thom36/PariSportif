@@ -11,7 +11,10 @@ namespace PariSportif
     public class AppDbContext : DbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options)
-            : base(options){ }
+            : base(options)
+        {
+
+        }
 
         public DbSet<Match> Matches => Set<Match>();
         public DbSet<Odd> Odds => Set<Odd>();

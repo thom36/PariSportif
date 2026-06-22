@@ -7,9 +7,9 @@ namespace PariSportif.Models
 {
     public class Match
     {
-        public int Id {get; set;}
-        public string? HomeTeam {get; set;}
-        public string? AwayTeam {get; set;}
+        public int Id { get; set; }
+        public string? HomeTeam { get; set; }
+        public string? AwayTeam { get; set; }
         public List<Odd> Odds { get; set; } = new List<Odd>();
 
     }

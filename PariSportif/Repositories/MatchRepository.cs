@@ -25,21 +25,21 @@ namespace PariSportif.Repositories
         public async Task<List<Match>> GetAll()
         {
             return await _context.Matches
-                            .Include(m=>m.Odds)
+                            .Include(m => m.Odds)
                             .ToListAsync();
         }
 
         public async Task<List<Match>> GetByTeam(string team)
         {
             return await _context.Matches
-                    .Include(m=>m.Odds)
-                    .Where(m=>m.HomeTeam == team || m.AwayTeam == team)
+                    .Include(m => m.Odds)
+                    .Where(m => m.HomeTeam == team || m.AwayTeam == team)
                     .ToListAsync();
         }
 
         public async Task<List<Odd>> GetByMatchId(int id)
         {
-            return await _context.Odds.Where(m=>m.MatchId == id).ToListAsync();
+            return await _context.Odds.Where(m => m.MatchId == id).ToListAsync();
         }
     }
 }

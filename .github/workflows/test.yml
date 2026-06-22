@@ -33,3 +33,25 @@ jobs:
 
       - name: Test
         run: dotnet test PariSportifRepo.slnx --no-build --configuration Release --logger "trx"
+
+  quality:
+    runs-on: ubuntu-latest
+
+    steps:
+      -name: Checkout repository
+      uses: actions/setup-dotnet@v5
+
+      -name: Setup .NET
+      uses: actions/setup-dotnet@v5
+      with:
+        dotnet-version: 9.0.x
+      
+      -name: Restore
+      run: dotnet restore PariSportifRepo.slnx
+
+      -name: Check formatting
+      run: dotnet format PariSportifRepo.slnx --verify-no-changes
+
+      -name: Build (with analyzers)
+      run: dotnet build PariSportifRepo.slnx -warnaserror --configuration Release
+      

@@ -33,7 +33,7 @@ namespace PariSportif.Services
                 Odds = m.Odds
             }).ToList();
         }
-        
+
         public async Task<List<MatchDto>> GetMatchesByTeam(string team)
         {
             var res = await _matchRepo.GetByTeam(team);

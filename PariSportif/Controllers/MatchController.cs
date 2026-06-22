@@ -29,9 +29,9 @@ namespace PariSportif.Controllers
         [HttpPost]
         public async Task<IActionResult> AddMatch([FromBody] Match match)
         {
-            if(match == null) return BadRequest();
+            if (match == null) return BadRequest();
             var created = _service.AddMatches(match);
-            return CreatedAtAction("match created",new {id = created.Id}, created);
+            return CreatedAtAction("match created", new { id = created.Id }, created);
         }
 
         [HttpGet("byTeam{team}")]
@@ -42,7 +42,7 @@ namespace PariSportif.Controllers
                 var matches = await _service.GetMatchesByTeam(team);
                 return Ok(matches);
             }
-            catch(NotFoundException ex)
+            catch (NotFoundException ex)
             {
                 return NotFound(ex.Message);
             }
@@ -56,7 +56,7 @@ namespace PariSportif.Controllers
                 var matches = await _service.GetOddsByMatchId(matchId);
                 return Ok(matches);
             }
-            catch(NotFoundException ex)
+            catch (NotFoundException ex)
             {
                 return NotFound(ex.Message);
             }
