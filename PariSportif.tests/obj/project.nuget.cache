@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "LRgY8oKOAdk=",
+  "dgSpecHash": "jQaSLqEq1eg=",
   "success": true,
   "projectFilePath": "/home/messina/Documents/Formation_C#/PariSportifRepo/PariSportif.tests/PariSportif.tests.csproj",
   "expectedPackageFiles": [
     "/home/messina/.nuget/packages/azure.core/1.38.0/azure.core.1.38.0.nupkg.sha512",
     "/home/messina/.nuget/packages/azure.identity/1.11.4/azure.identity.1.11.4.nupkg.sha512",
+    "/home/messina/.nuget/packages/bcrypt.net-next/4.2.0/bcrypt.net-next.4.2.0.nupkg.sha512",
     "/home/messina/.nuget/packages/castle.core/5.1.1/castle.core.5.1.1.nupkg.sha512",
     "/home/messina/.nuget/packages/coverlet.collector/6.0.4/coverlet.collector.6.0.4.nupkg.sha512",
     "/home/messina/.nuget/packages/fluentassertions/8.10.0/fluentassertions.8.10.0.nupkg.sha512",
@@ -70,5 +71,15 @@
     "/home/messina/.nuget/packages/xunit.extensibility.execution/2.9.3/xunit.extensibility.execution.2.9.3.nupkg.sha512",
     "/home/messina/.nuget/packages/xunit.runner.visualstudio/3.1.5/xunit.runner.visualstudio.3.1.5.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json.",
+      "projectPath": "/home/messina/Documents/Formation_C#/PariSportifRepo/PariSportif.tests/PariSportif.tests.csproj",
+      "warningLevel": 1,
+      "filePath": "/home/messina/Documents/Formation_C#/PariSportifRepo/PariSportif.tests/PariSportif.tests.csproj",
+      "targetGraphs": []
+    }
+  ]
 }
