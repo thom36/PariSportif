@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PariSportif.tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f4a94db72bcff2ce8d74080283dedfe05a890fff")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3ae665d1a9e14547f88f05bab313c20f6db44edf")]
 [assembly: System.Reflection.AssemblyProductAttribute("PariSportif.tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PariSportif.tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

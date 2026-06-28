@@ -39,6 +39,20 @@ namespace PariSportif.Data
             };
 
             context.Matches.AddRange(matches);
+
+            var users = new List<User>
+            {
+                new User
+                {
+                    Name = "Dorian",
+                    Email = "Dorian@gmail.com",
+                    PasswordHash = BCrypt.Net.BCrypt.HashPassword("pieddansletombeau"),
+                    Cash = 0,
+                    Freebet = 10
+                }
+            };
+            context.Users.AddRange(users);
+
             context.SaveChanges();
         }
 

@@ -11,7 +11,7 @@ using PariSportif;
 namespace PariSportif.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260311084709_InitialCreate")]
+    [Migration("20260627084145_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -19,7 +19,7 @@ namespace PariSportif.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.8")
+                .HasAnnotation("ProductVersion", "9.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
@@ -67,15 +67,41 @@ namespace PariSportif.Migrations
                     b.ToTable("Odds");
                 });
 
+            modelBuilder.Entity("PariSportif.Models.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<double>("Cash")
+                        .HasColumnType("double");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("longtext");
+
+                    b.Property<double>("Freebet")
+                        .HasColumnType("double");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
+                });
+
             modelBuilder.Entity("PariSportif.Models.Odd", b =>
                 {
-                    b.HasOne("PariSportif.Models.Match", "Match")
+                    b.HasOne("PariSportif.Models.Match", null)
                         .WithMany("Odds")
                         .HasForeignKey("MatchId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Match");
                 });
 
             modelBuilder.Entity("PariSportif.Models.Match", b =>
