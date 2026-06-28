@@ -13,9 +13,9 @@ namespace PariSportif.Services
         }
         public async Task Deposit(int userId, double amount)
         {
-            if(amount <= 0) throw new ArgumentException("Amount must be positive");
+            if (amount <= 0) throw new ArgumentException("Amount must be positive");
             var user = await _userRepo.FindById(userId);
-            if(user == null) throw new NotFoundException("User not found");
+            if (user == null) throw new NotFoundException("User not found");
             user.Cash += amount;
             await _userRepo.Update(user);
         }
@@ -23,17 +23,17 @@ namespace PariSportif.Services
         public async Task<double> GetBalance(int userId)
         {
             var user = await _userRepo.FindById(userId);
-            if(user == null) throw new NotFoundException("User not found");
+            if (user == null) throw new NotFoundException("User not found");
             return user.Cash;
         }
 
         public async Task Withdraw(int userId, double amount)
         {
-            if(amount <= 0) throw new ArgumentException("Amount must be positive");
+            if (amount <= 0) throw new ArgumentException("Amount must be positive");
             var user = await _userRepo.FindById(userId);
-            if(user == null) throw new NotFoundException("User not found");
+            if (user == null) throw new NotFoundException("User not found");
             var userBalance = user.Cash;
-            if(userBalance < amount) throw new WithdrawException($"Not enough cash to withdraw {amount} €");
+            if (userBalance < amount) throw new WithdrawException($"Not enough cash to withdraw {amount} €");
             user.Cash -= amount;
         }
     }

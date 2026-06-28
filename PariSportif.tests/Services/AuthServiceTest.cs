@@ -34,7 +34,7 @@ public class AuthServiceTest
 
         repoMock.Setup(r => r.FindByEmail("Dorian@gmail.com"))
                 .ReturnsAsync(users[0]);
-        
+
         jwtMock.Setup(j => j.GenerateToken(users[0]))
                 .ReturnsAsync("fake-jwt-token");
 
@@ -50,7 +50,7 @@ public class AuthServiceTest
 
         result.Should().Be("fake-jwt-token");
     }
-    
+
     [Fact]
     public async Task TestLoginInvalidEmail()
     {
@@ -59,7 +59,7 @@ public class AuthServiceTest
 
         repoMock.Setup(r => r.FindByEmail("Dorian@gmail.com"))
                 .ReturnsAsync(users[0]);
-        
+
         jwtMock.Setup(j => j.GenerateToken(users[0]))
                 .ReturnsAsync("fake-jwt-token");
 
@@ -86,7 +86,7 @@ public class AuthServiceTest
 
         repoMock.Setup(r => r.FindByEmail("Dorian@gmail.com"))
                 .ReturnsAsync(users[0]);
-        
+
         jwtMock.Setup(j => j.GenerateToken(users[0]))
                 .ReturnsAsync("fake-jwt-token");
 

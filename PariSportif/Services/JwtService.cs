@@ -37,13 +37,13 @@ namespace PariSportif.Services
             };
 
             var token = new JwtSecurityToken(
-                issuer : jwtSettings["Issuer"],
-                audience : jwtSettings["Audience"],
-                claims : claims,
-                expires : DateTime.UtcNow.AddMinutes(
+                issuer: jwtSettings["Issuer"],
+                audience: jwtSettings["Audience"],
+                claims: claims,
+                expires: DateTime.UtcNow.AddMinutes(
                     double.Parse(jwtSettings["ExpireMinutes"])
                 ),
-                signingCredentials : credentials
+                signingCredentials: credentials
             );
 
             return Task.FromResult(new JwtSecurityTokenHandler().WriteToken(token));

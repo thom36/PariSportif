@@ -18,9 +18,9 @@ namespace PariSportif.Services
         public async Task<string> Login(LoginRequest request)
         {
             var user = await _userRepo.FindByEmail(request.Email);
-            if(user == null) throw new NotFoundException("Invalid email");
+            if (user == null) throw new NotFoundException("Invalid email");
             var isValid = BCrypt.Net.BCrypt.Verify(request.Password, user.PasswordHash);
-            if(!isValid) throw new NotFoundException("Invalid password");
+            if (!isValid) throw new NotFoundException("Invalid password");
             var token = await _jwtService.GenerateToken(user);
             return token;
         }
@@ -28,7 +28,7 @@ namespace PariSportif.Services
         public async Task<User> Register(RegisterRequest request)
         {
             var existingUser = await _userRepo.FindByEmail(request.Email);
-            if(existingUser != null) throw new UserFoundException($"{request.Email} already exist");
+            if (existingUser != null) throw new UserFoundException($"{request.Email} already exist");
 
             var user = new User
             {
