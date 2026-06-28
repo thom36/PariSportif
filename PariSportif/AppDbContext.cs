@@ -18,5 +18,6 @@ namespace PariSportif
 
         public DbSet<Match> Matches => Set<Match>();
         public DbSet<Odd> Odds => Set<Odd>();
+        public DbSet<User> Users => Set<User>();
     }
 }

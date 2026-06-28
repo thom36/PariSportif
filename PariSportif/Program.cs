@@ -24,6 +24,10 @@ builder.Services.AddSwaggerGen();
 // Enregistrement repo + service
 builder.Services.AddScoped<IMatchRepository, MatchRepository>();
 builder.Services.AddScoped<IMatchService, MatchService>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IWalletService, WalletService>();
+builder.Services.AddScoped<IJwtService, JwtService>();
 
 var app = builder.Build();
 
@@ -34,7 +38,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+if (!app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
 
 app.UseAuthorization();
 
@@ -45,10 +52,33 @@ using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
 
-    context.Database.Migrate();
+    var retries = 10;
 
-    DbInitializer.Seed(context);
-    Console.WriteLine("Database Seeded");
+    while (true)
+    {
+        try
+        {
+            context.Database.Migrate();
+            break;
+        }
+        catch
+        {
+            if (--retries == 0) throw;
+            Thread.Sleep(3000);
+        }
+    }
+
+    // IMPORTANT : seed safe
+    if (!context.Database.CanConnect())
+        return;
+
+    // IMPORTANT FIX ICI
+    context.Database.EnsureCreated(); // 🔥 sécurité (optionnel mais utile en dev)
+
+    if (!context.Users.Any())
+    {
+        DbInitializer.Seed(context);
+    }
 }
 
 app.Run();
